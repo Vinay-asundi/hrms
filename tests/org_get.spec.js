@@ -5,16 +5,8 @@ const { getAuthToken } = require('../utils/authUtils');
 test('POST /lead/create with auth token', async ({ request }) => {
   const token = await getAuthToken(request); 
 
-  const response = await request.post('lead/create', {
-    data: {
-      name: 'test1',
-      orgType: 'test1',
-      ownerName: {
-        firstName: 'vinay',
-        lastName: 'm'
-      },
-      mobile: '99999999999'
-    },
+  const response = await request.get('organization/get?', {
+  
     headers: {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
@@ -26,6 +18,6 @@ test('POST /lead/create with auth token', async ({ request }) => {
 
   expect(response.status()).toBe(200);
     expect(body).toHaveProperty('status', 200);
-   expect(body).toHaveProperty('message', 'Lead Added Successfully');
+   expect(body).toHaveProperty('message');
   
 });
