@@ -13,7 +13,7 @@ test('POST /lead/create with auth token', async ({ request }) => {
         firstName: 'vinay',
         lastName: 'm'
       },
-      mobile: '99999999999'
+      mobile: '99999999998'
     },
     headers: {
       Authorization: `Bearer ${token}`,
