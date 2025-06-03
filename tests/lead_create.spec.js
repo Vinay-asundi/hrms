@@ -11,7 +11,7 @@ test('POST /lead/create with auth token', async ({ request }) => {
       orgType: 'test1',
       ownerName: {
         firstName: 'vinay',
-        lastName: 'm'
+        lastName: 'a'
       },
       mobile: '99999999998'
     },
